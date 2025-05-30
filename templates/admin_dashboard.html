@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin_dashboard</title>
+</head>
+<body>
+    <h2>Welcome to Admin</h2>
+    <nav>
+        <a href="/admin_dashboard">Home</a> |
+        <a href="/admin_users">Users</a> |
+        <a href="/admin_search">Search</a> |
+        <a href="/admin_summary">Summary</a> |
+        <a href="/admin_logout">Logout</a>
+    </nav>
+    <h3>Parking Lots</h3>
+    <a href="{{ url_for('add_parking_lot') }}">+ Add Lot</a>
+    <ul>
+        {% for lot in parking_lots %}
+            <li>
+                <a href="{{ url_for('view_parking_lot', lot_id=lot.id) }}">{{ lot.name }}</a>
+                - Total Spots: {{ lot.total_spots }}, Occupied: {{ lot.occupied_spots }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

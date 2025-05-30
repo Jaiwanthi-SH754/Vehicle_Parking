@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <h2>User Login</h2>
+        <label for="email">Username:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <label for="remember">Remember Me:</label>
+        <input type="checkbox" id="remember" name="remember">
+        <br><br>
+        <button type="submit">Login</button>
+        <br><br>
+        <a href ="{{ url_for('registration') }}">Create an account?</a> <br>
+        <a href ="{{ url_for('home') }}">Go to home!</a>
+    </form>
+</body>
+</html>
